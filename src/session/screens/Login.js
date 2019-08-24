@@ -1,6 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 
+import Button from "../../ui/controls/Button";
+
 const Container = styled.div`
   display: flex;
   align-items: center;
@@ -13,7 +15,7 @@ const Container = styled.div`
 const LoginScreen = ({ login, status }) => (
   <Container>
     {status === "init" && <span>Trying to restore authentication...</span>}
-    {status === "restored" && <button onClick={login}>Login with Google</button>}
+    {status === "restored" && <Button onClick={login}>Login with Google</Button>}
   </Container>
 );
 export default LoginScreen;
