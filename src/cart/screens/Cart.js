@@ -33,11 +33,16 @@ const CartScreen = () => {
 
   if (!count) return <span>Tu carrito esta vacio</span>;
 
+  const items = R.pipe(
+    R.values,
+    R.sortBy(R.path(["beer", "name"]))
+  )(cart);
+
   return (
     <>
       <b>Vas a llevarte:</b>
       <Items>
-        {R.values(cart).map(({ ids, beer: { id, name, price } }) => (
+        {items.map(({ ids, beer: { id, name, price } }) => (
           <Item key={id}>
             <span>
               {ids.length} {name} (<Currency>{price}</Currency> c/u)
