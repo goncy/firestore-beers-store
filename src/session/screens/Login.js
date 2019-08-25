@@ -14,7 +14,7 @@ const Container = styled.div`
 
 const LoginScreen = ({ login, status }) => (
   <Container>
-    {status === "init" && <span>Trying to restore authentication...</span>}
+    {status === "init" && <span>Tratando de restaurar sesión...</span>}
     {status === "restored" && <Button onClick={login}>Login with Google</Button>}
   </Container>
 );
