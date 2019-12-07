@@ -15,4 +15,5 @@ const LoadingScreen = () => (
     <span>Cargando carrito...</span>
   </Container>
 );
+
 export default LoadingScreen;

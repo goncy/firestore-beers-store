@@ -18,4 +18,5 @@ const LoginScreen = ({ login, status }) => (
     {status === "restored" && <Button onClick={login}>Login with Google</Button>}
   </Container>
 );
+
 export default LoginScreen;
