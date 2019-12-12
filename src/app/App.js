@@ -2,9 +2,11 @@ import React from "react";
 import styled from "styled-components";
 import { Switch, Route, Redirect, Link } from "react-router-dom";
 
-import BeersScreen from "./beer/screens/Beers";
-import CartScreen from "./cart/screens/Cart";
-import { useCartCount } from "./cart/hooks";
+import BeersScreen from "../beer/screens/Beers";
+import CartScreen from "../cart/screens/Cart";
+import { useCartCount } from "../cart/hooks";
+
+import "./theme.css";
 
 const Container = styled.div`
   background: whitesmoke;

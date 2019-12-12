@@ -23,14 +23,15 @@ const CartProvider = ({ children }) => {
     api.remove(user.uid, id);
   }
 
-  React.useEffect(
-    () =>
-      api.onChange(user.uid, cart => {
-        setCart(cart);
-        setStatus("resolved");
-      }),
-    [user.uid]
-  );
+  React.useEffect(() => {
+    api.onChange(user.uid, cart => {
+      setCart(cart);
+
+      setStatus("resolved");
+    });
+
+    return () => setStatus("init");
+  }, [user.uid]);
 
   const state = {
     cart: R.pipe(
